@@ -4,11 +4,9 @@
 // Poi, definisci la stessa funzione somma ma come funzione anonima assegnata a una variabile
 // Quindi, riscrivi la funzione somma con la sintassi delle arrow functions.
 
-const somma = function(a, b) {
-    return a + b;
-};
+const somma = (a, b) => a + b;
 
-console.log(somma(5, 10));
+console.log(somma(2, 4));
 
 
 // Snack 2
