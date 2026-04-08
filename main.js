@@ -19,6 +19,11 @@ const quadrato = (numero) => numero * numero;
 // Crea una funzione eseguiOperazione
 // Definisci una funzione eseguiOperazione che accetta tre parametri: due numeri e una funzione operatore (callback). La funzione deve eseguire l'operazione fornita sui due numeri.
 
+function eseguiOperazione(n1, n2, operatore) {
+    return operatore(n1, n2);
+}
+
+eseguiOperazione(5, 3, somma); 
 
 // Snack 4
 // Crea un generatore di funzioni creaTimer
