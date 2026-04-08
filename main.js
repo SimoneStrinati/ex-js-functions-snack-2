@@ -99,6 +99,18 @@ contatore();
 // Crea una funzione che ferma un timer dopo un certo tempo
 // Scrivi una funzione eseguiEferma che accetta un messaggio, un tempo di avvio e un tempo di stop. Il messaggio deve essere stampato a intervalli regolari, ma si deve fermare dopo il tempo di stop.
 
+function eseguiEferma(messaggio, tempoAvvio, tempoStop) {
+    const intervalId = setInterval(() => {
+        console.log(messaggio);
+    }, tempoAvvio);
+
+    setTimeout(() => {
+        clearInterval(intervalId);
+        console.log("Intervallo fermato!");
+    }, tempoStop);
+};
+
+eseguiEferma("Messaggio stampato ogni secondo", 1000, 10000);
 
 // Snack 8 (Bonus)
 // Crea una funzione che simula un conto alla rovescia
