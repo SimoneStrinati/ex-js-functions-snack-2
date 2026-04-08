@@ -23,7 +23,7 @@ function eseguiOperazione(n1, n2, operatore) {
     return operatore(n1, n2);
 }
 
-eseguiOperazione(5, 3, somma); 
+eseguiOperazione(5, 3, somma);
 
 // Snack 4
 // Crea un generatore di funzioni creaTimer
@@ -47,7 +47,7 @@ function creaTimer(tempo) {
     return () => {
         setTimeout(() => {
             console.log("Tempo scaduto!");
-        }, tempo);                  
+        }, tempo);
     }
 };
 
@@ -86,12 +86,12 @@ function creaContatoreAutomatico(intervallo) {
         setInterval(() => {
             contatore++;
             console.log(contatore);
-        }, intervallo); 
+        }, intervallo);
     };
-}   
+}
 
 const contatore = creaContatoreAutomatico(1000);
-contatore();    
+contatore();
 
 
 
@@ -123,9 +123,9 @@ function contoAllaRovescia(n) {
         if (n < 0) {
             clearInterval(intervalId);
             console.log("Tempo scaduto!");
-        }   
+        }
     }
-    , 1000);
+        , 1000);
 };
 
 contoAllaRovescia(5);
@@ -135,6 +135,26 @@ contoAllaRovescia(5);
 // Creare una funzione che esegue una sequenza di operazioni con ritardi
 // Scrivi una funzione sequenzaOperazioni che accetta un array di operazioni (funzioni) e un tempo di intervallo.
 // Ogni operazione deve essere eseguita in sequenza con un ritardo uguale al tempo di intervallo.
+
+function sequenzaOperazioni(operazioni, intervallo) {
+
+    operazioni.forEach((operazione, index) => {
+        setTimeout(() => {
+            operazione();
+            if (index === operazioni.length - 1) {
+                console.log("Tutte le operazioni sono state eseguite!");
+            }
+        }, intervallo * index);
+    });
+};
+
+const operazioni = [
+    () => console.log("Operazione 1"),
+    () => console.log("Operazione 2"),
+    () => console.log("Operazione 3")
+];
+sequenzaOperazioni(operazioni, 2000);
+
 
 
 // Snack 10 (Bonus)
