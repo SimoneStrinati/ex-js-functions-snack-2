@@ -61,21 +61,25 @@ timer();
 // Nota: Questa funzione creerà un loop infinito. Interrompilo manualmente o usa clearInterval() in un altro script.
 
 function stampaOgniSecondo(messaggio) {
-    setInterval(() => {
+    const intervalId =setInterval(() => {
         console.log(messaggio);
     }, 1000);
+
+    return intervalId;
 };
 
-stampaOgniSecondo("Ciao, questo messaggio viene stampato ogni secondo!");
+const stopStampa = stampaOgniSecondo("Ciao, questo messaggio viene stampato ogni secondo!");
 
-function stopStampa() {
-    clearInterval(stampaOgniSecondo);
-};
+setTimeout(() => {
+    clearInterval(stopStampa);
+    console.log("Intervallo fermato!");
+}, 5000);
 
 
 // Snack 6
 // Crea un contatore automatico con setInterval
 // Definisci una funzione creaContatoreAutomatico che accetta un intervallo di tempo e restituisce una funzione che avvia un setInterval, incrementando un contatore e stampandolo.
+
 
 
 // Snack 7
